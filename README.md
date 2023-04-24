@@ -10,26 +10,27 @@ The graphics APIs used in World of Warcraft Alpha 0.5.3.3368 have various issues
 
 ##  Running in OpenGL mode on unsupported hardware
 Modern graphics cards have various issues with old OpenGL versions. On AMD, textures and models will often be stretched, flickering, and generally broken. On Nvidia, the game might not even start in OpenGL mode. Below are instructions on how to run OpenGL mode by translating the API calls to a different API (such as DX12 or DX9).
+***
 ### For AMD graphics cards:
-This method uses the publicly available Mesa driver to translate OpenGL calls to DirectX 12, fixing most of the graphical issues encountered when using OpenGL on an AMD graphics card.
+This method uses the publicly available <b>Mesa</b> driver to translate OpenGL calls to DirectX 12, fixing most of the graphical issues encountered when using OpenGL on an AMD (and possibly others) graphics card.
 
-####Instructions:
-Step 1: Download the Mesa 23.0.2 package from [here](https://github.com/pal1000/mesa-dist-win/releases/tag/23.0.2). You may try the different packages provided there, but this fix has only been tested with "mesa3d-23.0.2-release-mingw.7z" so I recommend that one.
+<b>Instructions:</b>
 
-Step 2: Unpack the mesa driver into a subdirectory of your WoW root folder. (e.g. C:\Users\<user>\Downloads\WoW 0.5.3\mesa3d-23.0.2-release-mingw\)
+Step 1: Download the Mesa 23.0.2 package from [here](https://github.com/pal1000/mesa-dist-win/releases/tag/23.0.2). You may try the different packages provided there, but this fix has only been tested with `mesa3d-23.0.2-release-mingw.7z` so I recommend that one.
 
-Step 3: Open a Command Prompt window as Administrator and navigate to the mesa folder (cd <wow root>\<mesa root>\)
+Step 2: Unpack the mesa driver into a subdirectory of your WoW root folder. (e.g. in my case C:\\Users\\\<user>\\Downloads\\WoW 0.5.3\\mesa3d-23.0.2-release-mingw\\)
 
-Step 4: Type "perappdeploy" and follow the installation utility as listed below:
+Step 3: Open a Command Prompt window as Administrator and navigate to the mesa folder (cd \<wow root>\\\<mesa root>\)
+
+Step 4: Type `perappdeploy` and follow the installation utility as listed below:
 	
-4.1: At "path to folder holding application executable", provide the full path to your WoW root directory (e.g. in my case C:\Users\<user>\Downloads\WoW 0.5.3)
+    -4.1: At "path to folder holding application executable", provide the full path to your WoW root directory (e.g. in my case C:\Users\<user>\Downloads\WoW 0.5.3)
 
-4.2: At "application executable name with or without extension", type in "WoWClient.exe". (without quotation marks)
+    -4.2: At "application executable name with or without extension", type in "WoWClient.exe". (without quotation marks)
 
-4.3: Select x86 version when asked. 
+    -4.3: Select x86 version when asked. 
 
-4.4: Answer the next few questions the utility will ask as follows (these are in order):
-
+    -4.4: Answer the next few questions the utility will ask as follows (these are in order):
 	
 	    Q: Do you want Desktop OpenGL drivers? 
 	    A: y
@@ -46,19 +47,67 @@ Step 4: Type "perappdeploy" and follow the installation utility as listed below:
 	    Q: More Mesa deployment?
 	    A: n
 
--Step 5: Close the cmd and open the Config.wtf file located in <wow root>\WTF for editing.
+Step 5: Close the cmd and open the Config.wtf file located in \<wow root>\\WTF for editing.
 
--Step 6: Find the line SET gxApi "direct3d" and change it to SET gxApi "opengl"
+Step 6: Find the line `SET gxApi "direct3d"` and change it to `SET gxApi "opengl"`
 
--Step 7: Save and close the file, and you're done! Launch the WoW client as usual (either through the optional WoW.bat provided by Grender or your own shortcut containing the same startup switches) and enjoy!
+Step 7: Save and close the file, and you're done! Launch the WoW client as usual (either through the optional WoW.bat provided by Grender or your own shortcut containing the same startup switches) and enjoy!
 
-IMPORTANT NOTE: Do NOT delete the mesa driver folder from your wow root after you are done! The original folder is required for the fix to work!
+<b>IMPORTANT NOTES:</b> 
 
-KNOWN BUGS:
--Game might occasionally crash at launch with an access violation. I've found that changing any setting in your Config.wtf and relaunching the client a few times allows the game to start properly, and you shouldn't have issues anymore for a while after that. I'm not sure what causes this yet.
+-Do NOT delete the mesa driver folder from your wow root after you are done! The original folder is required for the fix to work!
 
+-This fix may also work on certain Intel or Nvidia graphics cards. If other fixes fail for your non-AMD GPU, try this one as well!
+
+<b>KNOWN BUG:</b> Game might occasionally crash at launch with an access violation. I've found that changing any setting in your Config.wtf and relaunching the client a few times allows the game to start properly, and you shouldn't have issues anymore for a while after that. I'm not sure what causes this yet.
+***
 ### For Nvidia graphics cards:
+This method uses the publicly available <b>QindieGL</b> wrapper that translates OpenGL calls to DirectX 9. While this might not significantly improve your FPS over native Direct3D mode, you may then be able to further translate the DirectX 9 calls to DirectX 12 using a second wrapper (This "double wrapping" is currently being tested, and is not supported, but you can still try it).
 
+<b>Instructions:</b>
+
+Step 1: Download the latest release of QindieGL from [here](https://github.com/crystice-softworks/QindieGL/releases/tag/1.0).
+
+Step 2: Extract the archive somewhere and open the resulting folder.
+
+Step 3: Copy `opengl32.dll` to your WoW root folder (e.g. in my case C:\\Users\\\<user>\\Downloads\\WoW 0.5.3).
+
+Step 4: Find the line `SET gxApi "direct3d"` and change it to `SET gxApi "opengl"`
+
+Step 5: Save and close the file, and you're done! Launch the WoW client as usual (either through the optional WoW.bat provided by Grender or your own shortcut containing the same startup switches) and enjoy!
+
+Step 6 (optional, for advanced users): Use a DX9 to 12 wrapper to further translate the calls to a newer API. This may or may not work!
+
+<b>NOTE:</b> This method does not work on AMD graphics cards, and has not been tested on Intel ones.
 
 ## Improving framerates in Direct3D mode 
-### Using dgVoodoo2
+Native Direct3D mode has been found to be incredibly slow on most graphics cards, usually providing only 20 to 30 FPS depending on the exact GPU used. There are a few ways to improve the framerate by forwarding the DirectX calls to a newer version such as DirectX 11 or 12.
+***
+### Using dgVoodoo2:
+dgVoodoo2 is an emulator/wrapper program that emulates a Voodoo graphics card using DirectX 11-12 to allow the user to run various games using the DirectX 9- and 3dfx Glide graphics APIs. It can be used to translate the old Direct3D calls used in WoW 0.5.3 to DirectX 11 or 12 to achieve higher framerates in Direct3D mode.
+
+<b>Instructions:</b>
+
+Step 1: Download the latest regular release of dgVoodoo2 from the [Dege's stuffs](http://dege.freeweb.hu/dgVoodoo2/dgVoodoo2/) website.
+
+Step 2: Extract the archive somewhere and open the resulting folder.
+
+Step 3: Copy `dgVoodooCpl.exe` and `dgVoodoo.conf` from the dgVoodoo2 root folder to your WoW root folder (e.g. in my case C:\\Users\\\<user>\\Downloads\\WoW 0.5.3).
+
+Step 4: Copy `D3D9.dll` from \<dgVoodoo2 root>\\MS\\x86 to your WoW root folder.
+
+Step 5: Run dgVoodooCpl from your WoW root folder.
+
+Step 5.1: In the <b>General</b> tab, select your <b>Output API</b> (`Direct3D 12 (feature level 12.0)` recommended).
+
+Step 5.2: In the <b>General</b> tab, under <b>Adapter(s) to use/enable</b> select your main graphics card that you want to play the game with.
+
+Step 5.3: In the <b>DirectX</b> tab, change <b>VRAM</b> to the desired value (up to your graphics card's physical VRAM).
+
+Step 5.4 (optional): In the <b>DirectX</b> tab, uncheck "dgVoodoo Watermark" to not show a watermark when playing the game.
+
+Step 5.5: Click the "Apply" button.
+
+Step 6: Open the Config.wtf file located in \<wow root>\\WTF for editing and make sure you have `SET gxApi "direct3d"` instead of `SET gxApi "opengl"` (unless you're trying to combine this method with the Nvidia OpenGL one!)
+
+Step 7: Save and close the file, and you're done! Launch the WoW client as usual (either through the optional WoW.bat provided by Grender or your own shortcut containing the same startup switches) and enjoy!
