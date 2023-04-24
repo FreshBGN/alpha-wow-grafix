@@ -30,13 +30,13 @@ Step 3: Open a Command Prompt window as Administrator and navigate to the mesa f
 
 Step 4: Type `perappdeploy` and follow the installation utility as listed below:
 	
-    -4.1: At "path to folder holding application executable", provide the full path to your WoW root directory (e.g. in my case C:\Users\<user>\Downloads\WoW 0.5.3)
+    -At "path to folder holding application executable", provide the full path to your WoW root directory (e.g. in my case C:\Users\<user>\Downloads\WoW 0.5.3)
 
-    -4.2: At "application executable name with or without extension", type in "WoWClient.exe". (without quotation marks)
+    -At "application executable name with or without extension", type in "WoWClient.exe". (without quotation marks)
 
-    -4.3: Select x86 version when asked. 
+    -Select x86 version when asked. 
 
-    -4.4: Answer the next few questions the utility will ask as follows (these are in order):
+    -Answer the next few questions the utility will ask as follows (these are in order):
 	
 	    Q: Do you want Desktop OpenGL drivers? 
 	    A: y
