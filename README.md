@@ -1,5 +1,11 @@
 # Alpha WoW Grafix - A repository of various fixes and instructions for fixing graphical issues and improving FPS in WoW 0.5.3
 The graphics APIs used in World of Warcraft Alpha 0.5.3.3368 have various issues and incompatibilities with modern graphics cards that vary based on GPU brand, model, and driver version. This repository aims to be a common resource containing fixes and instructions for as many different such issues as possible. More fixes will be added over time as different graphics cards are tested.
+***
+Special thanks to:
+
+-The Alpha Project, for getting me interested in exploring the World of Warcraft alpha, and for providing an amazing emulator for 0.5.3.
+
+-Lenny, for working with me on testing out many of these fixes on his Nvidia graphics card, as I do not own one. Thanks, man!
 
 ## Prerequisites
 -Make sure you're using the modded WoW client before applying any of these fixes. The modded client can be found [here](https://anonfiles.com/fbi9C0M0y9/Mods_zip), or use this [mirror](https://cdn.discordapp.com/attachments/653374433636909077/1089350731909308466/Mods.zip). Simply replace the files in your WoW alpha root folder with the modded ones from the archive.
