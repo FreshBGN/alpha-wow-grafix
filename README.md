@@ -22,13 +22,13 @@ Step 3: Open a Command Prompt window as Administrator and navigate to the mesa f
 
 Step 4: Type "perappdeploy" and follow the installation utility as listed below:
 	
-	4.1: At "path to folder holding application executable", provide the full path to your WoW root directory (e.g. in my case C:\Users\<user>\Downloads\WoW 0.5.3)
+4.1: At "path to folder holding application executable", provide the full path to your WoW root directory (e.g. in my case C:\Users\<user>\Downloads\WoW 0.5.3)
 
-	4.2: At "application executable name with or without extension", type in "WoWClient.exe". (without quotation marks)
+4.2: At "application executable name with or without extension", type in "WoWClient.exe". (without quotation marks)
 
-	4.3: Select x86 version when asked. 
+4.3: Select x86 version when asked. 
 
-	4.4: Answer the next few questions the utility will ask as follows (these are in order):
+4.4: Answer the next few questions the utility will ask as follows (these are in order):
 
 	
 	    Q: Do you want Desktop OpenGL drivers? 
@@ -46,11 +46,11 @@ Step 4: Type "perappdeploy" and follow the installation utility as listed below:
 	    Q: More Mesa deployment?
 	    A: n
 
--Step 7: Close the cmd and open the Config.wtf file located in <wow root>\WTF for editing.
+-Step 5: Close the cmd and open the Config.wtf file located in <wow root>\WTF for editing.
 
--Step 8: Find the line SET gxApi "direct3d" and change it to SET gxApi "opengl"
+-Step 6: Find the line SET gxApi "direct3d" and change it to SET gxApi "opengl"
 
--Step 9: Save and close the file, and you're done! Launch the WoW client as usual (either through the optional WoW.bat provided by Grender or your own shortcut containing the same startup switches) and enjoy!
+-Step 7: Save and close the file, and you're done! Launch the WoW client as usual (either through the optional WoW.bat provided by Grender or your own shortcut containing the same startup switches) and enjoy!
 
 IMPORTANT NOTE: Do NOT delete the mesa driver folder from your wow root after you are done! The original folder is required for the fix to work!
 
