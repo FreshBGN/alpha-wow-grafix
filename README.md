@@ -14,6 +14,7 @@ Modern graphics cards have various issues with old OpenGL versions. On AMD, text
 This method uses the publicly available Mesa driver to translate OpenGL calls to DirectX 12, fixing most of the graphical issues encountered when using OpenGL on an AMD graphics card.
 
 Instructions:
+
 -Step 1: Download the Mesa 23.0.2 package from [here](https://github.com/pal1000/mesa-dist-win/releases/tag/23.0.2). You may try the different packages provided there, but this fix has only been tested with "mesa3d-23.0.2-release-mingw.7z" so I recommend that one.
 
 -Step 2: Unpack the mesa driver into a subdirectory of your WoW root folder. (e.g. C:\Users\<user>\Downloads\WoW 0.5.3\mesa3d-23.0.2-release-mingw\)
