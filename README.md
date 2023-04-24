@@ -13,8 +13,7 @@ Modern graphics cards have various issues with old OpenGL versions. On AMD, text
 ### For AMD graphics cards:
 This method uses the publicly available Mesa driver to translate OpenGL calls to DirectX 12, fixing most of the graphical issues encountered when using OpenGL on an AMD graphics card.
 
-Instructions:
-
+####Instructions:
 -Step 1: Download the Mesa 23.0.2 package from [here](https://github.com/pal1000/mesa-dist-win/releases/tag/23.0.2). You may try the different packages provided there, but this fix has only been tested with "mesa3d-23.0.2-release-mingw.7z" so I recommend that one.
 
 -Step 2: Unpack the mesa driver into a subdirectory of your WoW root folder. (e.g. C:\Users\<user>\Downloads\WoW 0.5.3\mesa3d-23.0.2-release-mingw\)
@@ -22,12 +21,17 @@ Instructions:
 -Step 3: Open a Command Prompt window as Administrator and navigate to the mesa folder (cd <wow root>\<mesa root>\)
 
 -Step 4: Type "perappdeploy" and follow the installation utility as listed below:
-     *4.1: At "path to folder holding application executable", provide the full path to your WoW root directory (e.g. in my case C:\Users\<user>\Downloads\WoW 0.5.3)
-     *4.2: At "application executable name with or without extension", type in "WoWClient.exe". (without quotation marks)
-     *4.3: Select x86 version when asked. 
-     *4.4: Answer the next few questions the utility will ask as follows (these are in order):
-          Q: Do you want Desktop OpenGL drivers? 
-          A: y
+	
+	*4.1: At "path to folder holding application executable", provide the full path to your WoW root directory (e.g. in my case C:\Users\<user>\Downloads\WoW 0.5.3)
+
+	*4.2: At "application executable name with or without extension", type in "WoWClient.exe". (without quotation marks)
+
+	*4.3: Select x86 version when asked. 
+
+	*4.4: Answer the next few questions the utility will ask as follows (these are in order):
+          
+	    Q: Do you want Desktop OpenGL drivers? 
+	    A: y
           
 	    Q: Do you need OpenGL ES support?      
 	    A: n
