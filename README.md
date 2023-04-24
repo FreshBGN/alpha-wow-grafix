@@ -84,7 +84,7 @@ Step 6 (optional, for advanced users): Use a DX9 to 12 wrapper to further transl
 Native Direct3D mode has been found to be incredibly slow on most graphics cards, usually providing only 20 to 30 FPS depending on the exact GPU used. There are a few ways to improve the framerate by forwarding the DirectX calls to a newer version such as DirectX 11 or 12.
 ***
 ### Using dgVoodoo2:
-dgVoodoo2 is an emulator/wrapper program that emulates a Voodoo graphics card using DirectX 11-12 to allow the user to run various games using the DirectX 9- and 3dfx Glide graphics APIs. It can be used to translate the old Direct3D calls used in WoW 0.5.3 to DirectX 11 or 12 to achieve higher framerates in Direct3D mode.
+dgVoodoo2 is an emulator/wrapper program that emulates a Voodoo graphics card using DirectX 11-12 to allow the user to run various games using the DirectX 9- and 3dfx Glide graphics APIs. It can be used to translate the old Direct3D calls used in WoW 0.5.3 to DirectX 11 or 12 to achieve higher framerates in Direct3D mode. This method should work on most graphics cards, but has been known to crash on specific Nvidia models.
 
 <b>Instructions:</b>
 
