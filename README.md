@@ -3,7 +3,9 @@ The graphics APIs used in World of Warcraft Alpha 0.5.3.3368 have various issues
 
 ## Prerequisites
 -Make sure you're using the modded WoW client before applying any of these fixes. The modded client can be found [here](https://anonfiles.com/fbi9C0M0y9/Mods_zip), or use this [mirror](https://cdn.discordapp.com/attachments/653374433636909077/1089350731909308466/Mods.zip). Simply replace the files in your WoW alpha root folder with the modded ones from the archive.
+
 -Update your graphics drivers to the latest version! Driver download pages are [here](https://www.nvidia.com/download/index.aspx) for Nvidia, [here](https://www.amd.com/en/support) for AMD, and [here](https://www.intel.com/content/www/us/en/download-center/home.html) for Intel.
+
 -If you've tried other methods of improving FPS or fixing graphical issues/crashes, such as modified opengl/d3d drivers (e.g. dxgi.dll, d3d9.dll, opengl32.dll), remove all of them from the game folder before proceeding.
 
 ##  Running in OpenGL mode on unsupported hardware
