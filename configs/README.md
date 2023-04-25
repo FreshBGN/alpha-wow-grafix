@@ -1,1 +1,1 @@
-This folder contains Config files for OpenGL and Direct3D modes. These will be downloaded by the automatic scripts and put in the correct folder during installation, but you can also download and use them manually if you know how.
+This folder contains Config files for OpenGL and Direct3D modes. These will also be available in releases, to be downloaded by the automatic scripts and put in the correct folder during installation, but you can also download and use them manually if you know how.
