@@ -14,6 +14,15 @@ Special thanks to:
 
 -If you've tried other methods of improving FPS or fixing graphical issues/crashes, such as modified opengl/d3d drivers (e.g. dxgi.dll, d3d9.dll, opengl32.dll), remove all of them from the game folder before proceeding.
 
+## Requirements for the automatic scripts
+-The batch file must be put in your wow root folder (e.g. in my case C:\\Users\\\<user>\\Downloads\\WoW 0.5.3) before running it.
+
+-Make sure your wow root folder is in a location that does not require administrator privileges (unless you know how to PROPERLY run batch files as an administrator).
+
+-WinRAR OR 7-Zip installed in "C:\Program Files" (depending on the version of the batch file you choose).
+
+<b>NOTE:</b> If your WinRAR or 7-Zip is installed in a different location, you may edit the batch file with Notepad and change JUST the path to WinRAR/7-Zip in the "PATH=" line.
+
 ##  Running in OpenGL mode on unsupported hardware
 Modern graphics cards have various issues with old OpenGL versions. On AMD, textures and models will often be stretched, flickering, and generally broken. On Nvidia, the game might not even start in OpenGL mode. Below are instructions on how to run OpenGL mode by translating the API calls to a different API (such as DX12 or DX9).
 ***
@@ -22,13 +31,17 @@ This method uses the publicly available <b>Mesa</b> driver to translate OpenGL c
 
 <b>Instructions:</b>
 
+Step 0: If you're using one of our batch files for AMD graphics cards (from the releases section), ONLY follow the instructions in Step 5. All other steps are done automatically by the script.
+
 Step 1: Download the Mesa 23.0.2 package from [here](https://github.com/pal1000/mesa-dist-win/releases/tag/23.0.2). You may try the different packages provided there, but this fix has only been tested with `mesa3d-23.0.2-release-mingw.7z` so I recommend that one.
 
 Step 2: Unpack the mesa driver into a subdirectory of your WoW root folder. (e.g. in my case C:\\Users\\\<user>\\Downloads\\WoW 0.5.3\\mesa3d-23.0.2-release-mingw\\)
 
 Step 3: Open a Command Prompt window as Administrator and navigate to the mesa folder (cd \<wow root>\\\<mesa root>\)
 
-Step 4: Type `perappdeploy` and follow the installation utility as listed below:
+Step 4: Type `perappdeploy`.
+
+Step 5: Follow the installation utility as listed below:
 	
     -At "path to folder holding application executable", provide the full path to your WoW root directory (e.g. in my case C:\Users\<user>\Downloads\WoW 0.5.3)
 
@@ -53,11 +66,11 @@ Step 4: Type `perappdeploy` and follow the installation utility as listed below:
 	    Q: More Mesa deployment?
 	    A: n
 
-Step 5: Close the cmd and open the Config.wtf file located in \<wow root>\\WTF for editing.
+Step 6: Close the cmd and open the Config.wtf file located in \<wow root>\\WTF for editing.
 
-Step 6: Find the line `SET gxApi "direct3d"` and change it to `SET gxApi "opengl"`
+Step 7: Find the line `SET gxApi "direct3d"` and change it to `SET gxApi "opengl"`
 
-Step 7: Save and close the file, and you're done! Launch the WoW client as usual (either through the optional WoW.bat provided by Grender or your own shortcut containing the same startup switches) and enjoy!
+Step 8: Save and close the file, and you're done! Launch the WoW client as usual (either through the optional WoW.bat provided by Grender or your own shortcut containing the same startup switches) and enjoy!
 
 <b>IMPORTANT NOTES:</b> 
 
@@ -71,6 +84,8 @@ Step 7: Save and close the file, and you're done! Launch the WoW client as usual
 This method uses the publicly available <b>QindieGL</b> wrapper that translates OpenGL calls to DirectX 9. While this might not significantly improve your FPS over native Direct3D mode, you may then be able to further translate the DirectX 9 calls to DirectX 12 using a second wrapper (This "double wrapping" is currently being tested, and is not supported, but you can still try it).
 
 <b>Instructions:</b>
+
+Step 0: If you're using one of our batch files for Nvidia graphics cards (from the releases section), you do NOT need to do any of this - the script will do it all automatically.
 
 Step 1: Download the latest release of QindieGL from [here](https://github.com/crystice-softworks/QindieGL/releases/tag/1.0).
 
@@ -93,6 +108,8 @@ Native Direct3D mode has been found to be incredibly slow on most graphics cards
 dgVoodoo2 is an emulator/wrapper program that emulates a Voodoo graphics card using DirectX 11-12 to allow the user to run various games using the DirectX 9- and 3dfx Glide graphics APIs. It can be used to translate the old Direct3D calls used in WoW 0.5.3 to DirectX 11 or 12 to achieve higher framerates in Direct3D mode. This method should work on most graphics cards, but has been known to crash on specific Nvidia models.
 
 <b>Instructions:</b>
+
+Step 0: If you're using one of your batch files for Direct3D (from the releases section), you ONLY need to follow Steps 5.1 to 5.5. All other steps are done automatically by the scripts.
 
 Step 1: Download the latest regular release of dgVoodoo2 from the [Dege's stuffs](http://dege.freeweb.hu/dgVoodoo2/dgVoodoo2/) website.
 
