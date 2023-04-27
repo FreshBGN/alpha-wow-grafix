@@ -17,6 +17,8 @@ Special thanks to:
 -If you've tried other methods of improving FPS or fixing graphical issues/crashes, such as modified opengl/d3d drivers (e.g. dxgi.dll, d3d9.dll, opengl32.dll), remove all of them from the game folder before proceeding.
 
 ## Requirements for the automatic scripts
+-Windows 11 or Windows 10 (April 2018 update or newer)
+
 -The batch file must be put in your wow root folder (e.g. in my case C:\\Users\\\<user>\\Downloads\\WoW 0.5.3) before running it.
 
 -Make sure your wow root folder is in a location that does not require administrator privileges (unless you know how to PROPERLY run batch files as an administrator).
@@ -24,6 +26,8 @@ Special thanks to:
 -WinRAR OR 7-Zip installed in "C:\Program Files" (depending on the version of the batch file you choose).
 
 <b>NOTE:</b> If your WinRAR or 7-Zip is installed in a different location, you may edit the batch file with Notepad and change JUST the path to WinRAR/7-Zip in the "PATH=" line.
+
+<b>NOTE:</b> These requirements do not affect the manual instructions below - they are only for the automatic scripts provided in the Releases tab of this repo.
 
 ##  Running in OpenGL mode on unsupported hardware
 Modern graphics cards have various issues with old OpenGL versions. On AMD, textures and models will often be stretched, flickering, and generally broken. On Nvidia, the game might not even start in OpenGL mode. Below are instructions on how to run OpenGL mode by translating the API calls to a different API (such as DX12 or DX9).
