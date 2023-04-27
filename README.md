@@ -5,7 +5,7 @@ Automatic scripts now available. Read the "Prerequisites" and "Requirements" sec
 ***
 Special thanks to:
 
--The Alpha Project, for getting me interested in exploring the World of Warcraft alpha, and for providing an amazing emulator for 0.5.3.
+-[The Alpha Project](https://github.com/The-Alpha-Project), for getting me interested in exploring the World of Warcraft alpha, and for providing an amazing emulator for 0.5.3.
 
 -Lenny, for working with me on testing out many of these fixes on his Nvidia graphics card, as I do not own one. Thanks, man!
 
