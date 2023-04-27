@@ -17,7 +17,7 @@ Special thanks to:
 -If you've tried other methods of improving FPS or fixing graphical issues/crashes, such as modified opengl/d3d drivers (e.g. dxgi.dll, d3d9.dll, opengl32.dll), remove all of them from the game folder before proceeding.
 
 ## Requirements for the automatic scripts
--Windows 11 or Windows 10 (April 2018 update or newer)
+-Windows 11 or Windows 10 (April 2018 update or newer - or any other version of Windows if it has curl installed and included in PATH)
 
 -The batch file must be put in your wow root folder (e.g. in my case C:\\Users\\\<user>\\Downloads\\WoW 0.5.3) before running it.
 
