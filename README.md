@@ -25,7 +25,7 @@ Special thanks to:
 
 -WinRAR OR 7-Zip installed in "C:\Program Files" (depending on the version of the batch file you choose).
 
-<b>NOTE:</b> If your WinRAR or 7-Zip is installed in a different location, you may edit the batch file with Notepad and change JUST the path to WinRAR/7-Zip in the "PATH=" line.
+<b>NOTE:</b> If your WinRAR or 7-Zip is installed in a different location, you may edit the batch file with Notepad and change JUST the path to WinRAR/7-Zip in the "cd <path to WinRAR/7-Zip>" line.
 
 <b>NOTE:</b> These requirements do not affect the manual instructions below - they are only for the automatic scripts provided in the Releases tab of this repo.
 
