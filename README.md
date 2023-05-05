@@ -115,7 +115,7 @@ dgVoodoo2 is an emulator/wrapper program that emulates a Voodoo graphics card us
 
 <b>Instructions:</b>
 
-Step 0: If you're using one of your batch files for Direct3D (from the releases section), you ONLY need to follow Steps 5.1 to 5.5. All other steps are done automatically by the scripts.
+Step 0: If you're using one of our batch files for Direct3D (from the releases section), you ONLY need to follow Steps 5.1 to 5.5. All other steps are done automatically by the scripts.
 
 Step 1: Download the latest regular release of dgVoodoo2 from the [Dege's stuffs](http://dege.freeweb.hu/dgVoodoo2/dgVoodoo2/) website.
 
