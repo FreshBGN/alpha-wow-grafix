@@ -3,7 +3,7 @@ The graphics APIs used in World of Warcraft Alpha 0.5.3.3368 have various issues
 
 ## V2.0 is now in the works! Please be patient, as this is a very small side project for me, and I can't dedicate a lot of time to it. 
 ***
-Automatic scripts now available. Read the "Prerequisites" and "Requirements" sections below, then get the latest release from our [releases tab](https://github.com/FreshBGN/alpha-wow-grafix/releases).
+Automatic scripts now available. Read the "Prerequisites" and "Requirements" sections below, as well as Step 0 of your chosen method, then get the latest release from our [releases tab](https://github.com/FreshBGN/alpha-wow-grafix/releases).
 ***
 Special thanks to:
 
